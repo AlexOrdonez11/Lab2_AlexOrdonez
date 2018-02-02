@@ -23,7 +23,8 @@ int main(){
 			Ejercicio1();
 			break;
 		case 2:
-			Ejercicio2()
+			Ejercicio2();
+			break;
 	}
 	return 0;
 }
@@ -109,12 +110,12 @@ void Ejercicio2(){
 	cin>>lado1;
 	cin>>lado2;
 	cin>>lado3;
-	if(lado1+lado2<lado3||lado2+lado3<lado1||lado1+lado3=lado2){
+	if(lado1+lado2<lado3||lado2+lado3<lado1||lado1+lado3<lado2){
 		cout<<"No se puede hacer un triangulo con estas dmensiones"<<endl;
 	}else{
-		float AnguloA= (acos(((lado2^2)+(lado3^2)-(lado1^2))/(2*lado2*lado3)))*180/PI;
-		float AnguloB= (acos(((lado1^2)+(lado3^2)-(lado2^2))/(2*lado1*lado3)))*180/PI;
-		float AnguloC= (acos(((lado1^2)+(lado2^2)-(lado3^3))/(2*lado1*lado2)))*180/PI;
+		float AnguloA= (acos(((lado2*lado2)+(lado3*lado3)-(lado1*lado1))/(2*lado2*lado3)))*180/PI;
+		float AnguloB= (acos(((lado1*lado1)+(lado3*lado3)-(lado2*lado2))/(2*lado1*lado3)))*180/PI;
+		float AnguloC= (acos(((lado1*lado1)+(lado2*lado2)-(lado3*lado3))/(2*lado1*lado2)))*180/PI;
 		cout<<"El angulo A :"<<AnguloA<<endl;
 		cout<<"El angulo B :"<<AnguloB<<endl;
 		cout<<"El angulo C :"<<AnguloC<<endl;
