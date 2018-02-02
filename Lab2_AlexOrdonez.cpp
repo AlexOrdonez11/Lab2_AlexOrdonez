@@ -1,12 +1,13 @@
-#include<iostream>;
-#include<stdlib.h>;
-#include<time.h>;
-#include<math.h>;
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
 using namespace std;
 
 //Verifica si un numero es triangular 
 bool verificacionDelNumero(int);
 int GeneradorRandom();
+int VerificarTriangularAnterior(int);
 
 int main(){
 	char AnsofUser='s';
@@ -31,33 +32,55 @@ int main(){
 				}
 				break;
 			case 2:
-				if(verificacionDelNumero(GreneradorRandom())){
+				if(verificacionDelNumero(GeneradorRandom())){
 					cout<<"El numero es triangular"<<endl;
 				}else{
 					cout<<"El numero no es triangular"<<endl;
 				}
 				break;
+			case 3:
+				int numeroAevaluar;
+				cout<<"Ingrese el numero que quiere evaluar :";
+				cin>>numeroAevaluar;
+				cout<<"El numero anterior triangular es :"<<VerificarTriangularAnterior(numeroAevaluar)<<endl;
+				break;
 		}
+		cout<<"Desea continuar [s/n]:";
+		cin>>AnsofUser;
 	}
+	
 	return 0;
 }
 bool verificacionDelNumero(int numeroAevaluar){
 	int acumuladordelwhile=0;
 	int contador=0;
 	while(acumuladordelwhile<numeroAevaluar){
-		acumuladordelwhile=cont+(cont+1);
+		contador++;
+		acumuladordelwhile+=contador;
 		if(acumuladordelwhile==numeroAevaluar){
 			return true;
 		}else{
 			if(acumuladordelwhile>numeroAevaluar){
 				return false;
 			}
-	
+		}
+	}
+}
+int VerificarTriangularAnterior(int numeroAevaluar){
+	int acumuladordelwhile=0;
+	int contador=0;
+	while(acumuladordelwhile<numeroAevaluar){
+		acumuladordelwhile=contador+(contador+1);
+		if(acumuladordelwhile>=numeroAevaluar){
+			return acumuladordelwhile-(contador+1);
+		}
+		contador++;	
+
 	}
 }
 int GeneradorRandom(){
 	srand (time(NULL));
-	random= rand() % 100 +1;
+	int random= rand() % 100 +1;
 	cout<<"el numero es:"<<random;
 	return random;
 }
