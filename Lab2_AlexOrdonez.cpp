@@ -149,6 +149,7 @@ void Ejercicio3(){
 	cont=1;
 	cout<<"1"<<endl;
 	for(int i=2;i<=lim;i++){
+		int* fila[i+1];
 				
 	}
 }
