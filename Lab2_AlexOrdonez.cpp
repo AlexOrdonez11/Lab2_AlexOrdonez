@@ -148,8 +148,24 @@ void Ejercicio3(){
 	cin>>lim;
 	cont=1;
 	cout<<"1"<<endl;
+	int*filas[3];
+	filas[1]=1;
+	filas[2]=2;
+	filas[3]=1;
+	
 	for(int i=2;i<=lim;i++){
 		int* fila[i+1];
+		for(int x=0;x<i+1;x++){
+			cout<<filas[x]<<" "<<endl;
+		}
+		for(int j=0;j<i+1;j++){
+			if(j==0||j==i){
+				fila[j]=0;
+			}else{
+				fila[j]=filas[j-1]+filas[j];
+			}
+		}
+		filas=fila;
 				
 	}
 }
