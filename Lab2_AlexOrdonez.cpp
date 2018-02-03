@@ -11,20 +11,27 @@ int GeneradorRandom();
 int VerificarTriangularAnterior(int);
 void Ejercicio1();
 void Ejercicio2();
+void Ejercicio3();
 int main(){
-	int opcionmain;
-	cout<<"Menu Principal"<<endl;
-	cout<<"1.Ejercicio 1"<<endl;
-	cout<<"2.Ejercicio 2"<<endl;
-	cout<<"3.Ejercicio 3"<<endl;
-	cin>>opcionmain;
-	switch(opcionmain){
-		case 1:
-			Ejercicio1();
-			break;
-		case 2:
-			Ejercicio2();
-			break;
+	char resp='s';
+	while(resp=='s'){
+		int opcionmain;
+		cout<<"Menu Principal"<<endl;
+		cout<<"1.Ejercicio 1"<<endl;
+		cout<<"2.Ejercicio 2"<<endl;
+		cout<<"3.Ejercicio 3"<<endl;
+		cin>>opcionmain;
+		switch(opcionmain){
+			case 1:
+				Ejercicio1();
+				break;
+			case 2:
+				Ejercicio2();
+				break;
+		}
+		cout<<"desea continuar: ";
+		cin>>resp;
+
 	}
 	return 0;
 }
@@ -127,6 +134,21 @@ void Ejercicio2(){
 		float semiperimetro=(lado1+lado2+lado3)/2;
 		float Area=sqrt(semiperimetro*(semiperimetro-lado1)*(semiperimetro-lado2)*(semiperimetro-lado3));
 		cout<<"El area del triangulo es :"<<Area<<endl;
+		float Altura1=2*Area/lado1;
+		float Altura2=2*Area/lado2;
+		float Altura3=2*Area/lado3;
+		cout<<"la altura del lado 1 es :"<<Altura1<<endl;
+		cout<<"la altura del lado 2 es :"<<Altura2<<endl;
+		cout<<"la altura del lado 3 es :"<<Altura3<<endl;
 	}
 }
-
+void Ejercicio3(){
+	int lim;
+	cout<<"Ingrese el numero limite para catalan:";
+	cin>>lim;
+	cont=1;
+	cout<<"1"<<endl;
+	for(int i=2;i<=lim;i++){
+				
+	}
+}
